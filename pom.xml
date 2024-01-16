@@ -23,7 +23,6 @@
         <jackson-databind.version>2.16.1</jackson-databind.version>
     </properties>
 
-
     <build>
         <plugins>
 

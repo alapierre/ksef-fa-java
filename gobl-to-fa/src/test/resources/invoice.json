@@ -32,7 +32,8 @@
       "quantity": "1",
       "item": {
         "name": "myszka",
-        "price": "100.00"
+        "price": "100.00",
+        "unit": "szt."
       },
       "sum": "100.00",
       "taxes": [

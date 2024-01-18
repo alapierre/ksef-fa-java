@@ -13,6 +13,7 @@
         <module>ksef-fa-xml-model</module>
         <module>gobl-model</module>
         <module>gobl-to-fa</module>
+        <module>gobl-core</module>
     </modules>
 
     <properties>
@@ -29,6 +30,7 @@
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+        <jjwt.version>0.12.3</jjwt.version>
     </properties>
 
     <build>
@@ -173,6 +175,21 @@
                 <artifactId>junit-jupiter-engine</artifactId>
                 <version>5.9.1</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
 
         </dependencies>

@@ -38,7 +38,6 @@
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -60,6 +59,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.alapierre.ksef.fa</groupId>
+            <artifactId>gobl-model</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

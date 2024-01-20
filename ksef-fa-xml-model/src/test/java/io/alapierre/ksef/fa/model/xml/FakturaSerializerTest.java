@@ -3,10 +3,18 @@ package io.alapierre.ksef.fa.model.xml;
 import lombok.val;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.xml.sax.SAXParseException;
+import pl.com.softproject.utils.xml.XMLValidator;
 import pl.gov.crd.wzor._2023._06._29._12648.Faktura;
 import pl.gov.crd.wzor._2023._06._29._12648.TAdres;
 
+import javax.xml.XMLConstants;
+import javax.xml.transform.stream.StreamSource;
 import java.io.File;
+import java.io.FileReader;
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.Set;
 
 /**
  * @author Adrian Lapierre {@literal al@alapierre.io}
@@ -47,6 +55,28 @@ class FakturaSerializerTest {
 
     }
 
+    @Test
+    void validate() throws Exception {
 
+        val errors = new LinkedList<SAXParseException>();
+        val features = Set.of(new XMLValidator.SchemaFactoryFeature(XMLConstants.FEATURE_SECURE_PROCESSING, false));
 
+        URL url = new URL("http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd");
+        val schema = new StreamSource(url.openStream());
+        val result = XMLValidator.validate(new FileReader("src/test/resources/fa.xml"), schema, errors, features);
+
+        Assertions.assertTrue(result);
     }
+
+//    @Test
+//    void validateWithSchemaLocation() throws Exception {
+//
+//        val errors = new LinkedList<SAXParseException>();
+//        val features = Set.of(new XMLValidator.SchemaFactoryFeature(XMLConstants.FEATURE_SECURE_PROCESSING, false));
+//
+//        val result = XMLValidator.validate(new FileReader("src/test/resources/fa-with-schema-location.xml"), (Source) null, errors, features);
+//
+//        Assertions.assertTrue(result);
+//    }
+
+}

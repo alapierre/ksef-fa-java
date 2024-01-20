@@ -35,6 +35,19 @@ val str = fakturaSerializer.toString(invoice, false);
 System.out.println(str);
 ````
 
+## Validate
+
+````java
+val errors = new LinkedList<SAXParseException>();
+val features = Set.of(new XMLValidator.SchemaFactoryFeature(XMLConstants.FEATURE_SECURE_PROCESSING, false));
+// We need disable secure processing because the schema has restrictions to more than 1000 elements in a sequence
+// which is completely ridiculous, but what we can do...
+
+URL url = new URL("http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd");
+val schema = new StreamSource(url.openStream());
+val result = XMLValidator.validate(new FileReader("src/test/resources/fa.xml"), schema, errors, features);
+````
+
 # How to use with maven
 
 Stable project attracts are available in Maven Central, just add dependency to your project:

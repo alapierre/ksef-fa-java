@@ -55,7 +55,7 @@ Stable project attracts are available in Maven Central, just add dependency to y
 ````xml
 <dependency>
     <groupId>io.alapierre.ksef.fa</groupId>
-    <artifactId>java-ksef-fa</artifactId>
+    <artifactId>ksef-fa-xml-model</artifactId>
     <version>2.0.0</version>
 </dependency>
 ````

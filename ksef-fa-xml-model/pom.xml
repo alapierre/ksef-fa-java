@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>ksef-fa-xml-model</artifactId>
-
+    <name>ksef-fa-xml-model</name>
     <build>
 
         <resources>

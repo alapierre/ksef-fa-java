@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.alapierre.ksef.fa</groupId>
         <artifactId>java-ksef-fa</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>3.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>ksef-fa-xml-model</artifactId>
@@ -49,8 +49,15 @@
                     </execution>
                 </executions>
                 <configuration>
-<!--                    <catalog>${basedir}/src/main/resources/catalog.cat</catalog>-->
-                    <arguments>-nv</arguments>
+                    <xjbSources>
+                        <xjbSource>${project.basedir}/src/main/xjb/package.xjb</xjbSource>
+                    </xjbSources>
+
+                    <arguments>
+                        <argument>-nv</argument> <!-- no validation -->
+                    </arguments>
+
+                    <clearOutputDir>true</clearOutputDir>
                 </configuration>
                 <dependencies>
                     <dependency>

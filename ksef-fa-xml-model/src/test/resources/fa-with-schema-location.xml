@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Faktura xsi:schemaLocation="http://crd.gov.pl/wzor/2023/06/29/12648/ http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://crd.gov.pl/wzor/2023/06/29/12648/">
+         xmlns="http://crd.gov.pl/wzor/2025/06/25/13775/">
     <Naglowek>
-        <KodFormularza kodSystemowy="FA (2)" wersjaSchemy="1-0E">FA</KodFormularza>
-        <WariantFormularza>2</WariantFormularza>
-        <DataWytworzeniaFa>2022-01-01T00:00:00Z</DataWytworzeniaFa>
+        <KodFormularza kodSystemowy="FA (3)" wersjaSchemy="1-0E">FA</KodFormularza>
+        <WariantFormularza>3</WariantFormularza>
+        <DataWytworzeniaFa>2025-09-01T00:00:00Z</DataWytworzeniaFa>
         <SystemInfo>SamploFaktur</SystemInfo>
     </Naglowek>
     <Podmiot1>
@@ -38,6 +38,9 @@
             <Telefon>555777999</Telefon>
         </DaneKontaktowe>
         <NrKlienta>fdfd778343</NrKlienta>
+        <IDNabywcy>12345</IDNabywcy>
+        <JST>2</JST>
+        <GV>2</GV>
     </Podmiot2>
     <Fa>
         <KodWaluty>PLN</KodWaluty>

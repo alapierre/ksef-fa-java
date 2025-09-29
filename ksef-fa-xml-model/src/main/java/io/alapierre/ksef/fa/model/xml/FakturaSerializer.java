@@ -1,11 +1,10 @@
 package io.alapierre.ksef.fa.model.xml;
 
-import lombok.val;
 import pl.com.softproject.utils.xml.BaseXMLSerializer;
 import pl.com.softproject.utils.xml.XMLValidator;
-import pl.gov.crd.wzor._2023._06._29._12648.Faktura;
-import pl.gov.crd.wzor._2023._06._29._12648.TKodFormularza;
-import pl.gov.crd.wzor._2023._06._29._12648.TNaglowek;
+import pl.gov.crd.wzor.fa3.Faktura;
+import pl.gov.crd.wzor.fa3.TKodFormularza;
+import pl.gov.crd.wzor.fa3.TNaglowek;
 
 import javax.xml.XMLConstants;
 import java.util.Set;
@@ -18,14 +17,14 @@ public class FakturaSerializer extends BaseXMLSerializer<Faktura> {
 
     public FakturaSerializer() {
         super(
-                "pl.gov.crd.wzor._2023._06._29._12648",
-                "Schemat_FA_VAT(2)_v1-0E.xsd",
-                "http://crd.gov.pl/wzor/2023/06/29/12648/ http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd",
+                "pl.gov.crd.wzor.fa3",
+                "Schemat_FA_VAT(3)_v1-0E.xsd",
+                "http://crd.gov.pl/wzor/2025/06/25/13775/ http://crd.gov.pl/wzor/2025/06/25/13775/schemat.xsd",
                 Set.of(new XMLValidator.SchemaFactoryFeature(XMLConstants.FEATURE_SECURE_PROCESSING,false)));
     }
 
     public Faktura create() {
-        return create("FA (2)", "1-0E", (byte) 2);
+        return create("FA (3)", "1-0E", (byte) 2);
     }
 
     public Faktura create(String kodSystemowy, String wersjaSchemy, byte wariant) {

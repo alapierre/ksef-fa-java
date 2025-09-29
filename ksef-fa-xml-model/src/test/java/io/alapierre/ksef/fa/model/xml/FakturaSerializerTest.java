@@ -5,14 +5,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXParseException;
 import pl.com.softproject.utils.xml.XMLValidator;
-import pl.gov.crd.wzor._2023._06._29._12648.Faktura;
-import pl.gov.crd.wzor._2023._06._29._12648.TAdres;
+import pl.gov.crd.wzor.fa3.Faktura;
+import pl.gov.crd.wzor.fa3.TAdres;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.FileReader;
-import java.net.URL;
 import java.util.LinkedList;
 import java.util.Set;
 
@@ -61,8 +60,7 @@ class FakturaSerializerTest {
         val errors = new LinkedList<SAXParseException>();
         val features = Set.of(new XMLValidator.SchemaFactoryFeature(XMLConstants.FEATURE_SECURE_PROCESSING, false));
 
-        URL url = new URL("http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd");
-        val schema = new StreamSource(url.openStream());
+        val schema = new StreamSource(new FileReader("src/test/resources/Schemat_FA_VAT(3)_v1-0E.xsd"));
         val result = XMLValidator.validate(new FileReader("src/test/resources/fa.xml"), schema, errors, features);
 
         Assertions.assertTrue(result);
